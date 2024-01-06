@@ -1,11 +1,11 @@
-<link rel="stylesheet" type="text/css" href="home.css">
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Twitter-like Page</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="home.css">
 </head>
 <body>
     <div id="logo">
@@ -20,29 +20,34 @@
         </ul>
     </nav>
 
+    <!-- Main Content and Right Column Container -->
+    <div id="main-container">
+        <!-- Content including Tweet Box -->
+        <div id="content">
+            <div id="tweet-box">
+                <!-- Tweet box content -->
+                <textarea placeholder="Share your thoughts..."></textarea>
+                <button>Post</button>
+            </div>
 
+            <!-- Tweets Container -->
+            <div id="tweets-container">
+                <!-- Sample tweet -->
+                <div class="tweet">
+                    <strong>Username</strong>
+                    <p>This is a sample tweet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. #LoremIpsum</p>
+                </div>
 
-    <div id="content">
-        <div id="tweet-box">
-            <!-- Tweet box content -->
-            <textarea placeholder="Share your thoughts..."></textarea>
-            <button>Post</button>
+                <!-- Add more tweets as needed -->
+            </div>
         </div>
 
-        <!-- Sample tweet -->
-        <div class="tweet">
-            <strong>Username</strong>
-            <p>This is a sample tweet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. #LoremIpsum</p>
+        <!-- Right Column -->
+        <div id="right-column">
+            <!-- Add content for the right column here -->
+            <h2>User Profile</h2>
+            <p>Content goes here...</p>
         </div>
-
-        <!-- Add more tweets as needed -->
-    </div>
-
-    <!-- Right Column -->
-    <div id="right-column">
-        <!-- Add content for the right column here -->
-        <h2>Right Column</h2>
-        <p>Content goes here...</p>
     </div>
 </body>
 </html>

@@ -6,6 +6,19 @@ body, html {
     background-color: #1e1e1e; /* Background color for the page */
 }
 
+/* Logo Styles */
+#logo {
+    display: flex;
+    justify-content: center; /* Horizontally centers the logo */
+    align-items: center;     /* Vertically centers the logo */
+    margin-top: 50px;        /* Adds some top margin for spacing */
+}
+
+#logo img {
+    max-width: 200px;        /* Set a maximum width for the logo */
+    height: auto;            /* Maintain aspect ratio */
+}
+
 /* Login Container Styles */
 .login-container {
     display: flex;
@@ -16,14 +29,15 @@ body, html {
 
 /* Individual Box Styles */
 .login-box, .welcome-box {
-    width: 380px; /* Increased width for both boxes */
-    padding: 50px 30px; /* Increased padding for better spacing */
+    width: 380px;           /* Set the width to 380px for both boxes */
+    padding: 40px 20px;     /* Set consistent padding for both boxes */
     background-color: #C8E6C9;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin: 15px; /* Increased margin for better separation */
+    margin: 15px;           /* Margin for separation */
 }
+
 
 /* Form and Button Styles (For the Login Box) */
 .login-box form input[type="email"],

@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, url_for, request, g, redirect
 from database import connect_to_database, getDatabase
 
@@ -11,6 +12,7 @@ def close_database(error):
 @app.route('/')
 def index():
     return render_template("home.html")
+
 
 @app.route('/login')
 def login():

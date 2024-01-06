@@ -1,4 +1,4 @@
-/* styles.css */
+/* home.css */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -65,41 +65,6 @@ nav a {
     border-radius: 8px;
     padding: 10px;
 }
-/* styles.css */
-#tweet-box {
-    background-color: #f9f9f9; /* Lighter background color */
-    border: 1px solid #ccc; /* Softer border color */
-    padding: 15px; /* Increased padding for more space */
-    border-radius: 10px; /* Rounded corners */
-    margin-bottom: 20px; /* Increased margin-bottom for better separation */
-}
-
-#tweet-box textarea {
-    width: 100%; /* Make the textarea fill the entire width of the tweet box */
-    box-sizing: border-box; /* Include padding and border in the textarea's total width */
-    resize: none; /* Prevent users from resizing the textarea */
-    font-size: 14px; /* Increased font size for better readability */
-}
-
-#tweet-box button {
-    background-color: #084F35; /* Button background color */
-    color: white; /* Button text color */
-    padding: 8px 16px; /* Adjusted padding for the button */
-    border: none; /* Remove button border */
-    border-radius: 5px; /* Rounded corners for the button */
-    cursor: pointer;
-    font-size: 14px; /* Increased font size for the button */
-
-}
-
-
-/* Tweets Container */
-#tweets-container {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-}
 
 .tweet {
     margin-bottom: 10px;
@@ -119,4 +84,22 @@ nav a {
     background-color: #f0f0f0;
     padding: 10px;
     border-radius: 8px;
+}
+
+/* Additional styling for the tweet box */
+#tweet-box textarea {
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+    font-size: 14px;
+}
+
+#tweet-box button {
+    background-color: #084F35;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
 }

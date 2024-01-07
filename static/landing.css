@@ -1,106 +1,170 @@
-/* styles.css */
+/* home.css */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #1E1E1E;
-}
-
-/* Logo Styles */
-#logo {
+ }
+ 
+ 
+ /* Logo Styles */
+ #logo {
     display: flex;
     justify-content: center; /* Horizontally centers the logo */
     align-items: center;     /* Vertically centers the logo */
     margin-top: 50px;        /* Adds some top margin for spacing */
-}
-
-#logo img {
+ }
+ 
+ 
+ #logo img {
     max-width: 200px;        /* Set a maximum width for the logo */
     height: auto;            /* Maintain aspect ratio */
-}
-
-/* Adjust the margin for the .parent element */
-.parent {
+ }
+ 
+ 
+ /* Adjust the margin for the .parent element */
+ .parent {
     margin-top: 10px; /* Adjusted margin-top for spacing */
-}
-
-/* Navigation Bar */
-nav {
+ }
+ 
+ 
+ nav {
     background-color: #084F35;
     padding: 10px;
     text-align: center;
-}
-
-nav ul {
+ }
+ 
+ 
+ nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-nav li {
+ }
+ 
+ 
+ nav li {
     display: inline-block;
     margin-right: 20px;
-}
-
-nav a {
+ }
+ 
+ 
+ nav a {
     text-decoration: none;
     color: white;
     font-size: 16px;
-}
-
-/* Main Content */
-main {
+ }
+ 
+ 
+ /* Main Content and Right Column Container */
+ #main-container {
+    display: flex;
+ }
+ 
+ 
+ /* Content including Tweet Box */
+ #content {
     margin: 10px;
-}
-
-/* Hero Section */
-#hero {
+    width: 70%;
+ }
+ 
+ 
+ #tweet-box {
     background-color: #C8E6C9;
     border: 1px solid #C8E6C9;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#hero h1 {
-    color: #1e1e1e;
-}
-
-#hero p {
-    color: #1e1e1e;
-}
-
-/* Fun Facts Section */
-#fun-facts {
-    background-color: #C8E6C9;
-    border: 1px solid #C8E6C9;
-    border-radius: 8px;
-    margin-top: 20px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#fun-facts h2 {
-    color: #1e1e1e;
-}
-
-#fun-facts ul {
-    margin-top: 10px;
-    color: #1e1e1e;
-}
-
-#fun-facts li {
-    margin-bottom: 10px;
-}
-
-/* Footer */
-footer {
-    background-color: #084F35;
     padding: 10px;
-    text-align: center;
-}
-
-footer p {
-    color: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ }
+ 
+ 
+ #tweets-container {
+    background-color: #C8E6C9;
+    border: 1px solid #C8E6C9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-left: 5px;
+ }
+ 
+ 
+ .tweet {
+    margin-bottom: 20px;
+ }
+ 
+ 
+ .tweet strong {
+    color: #1e1e1e;
+ }
+ 
+ 
+ .tweet p {
     margin: 0;
-}
+ }
+ /* Right Column */
+ #right-column {
+    width: 30%;
+    background-color: #C8E6C9;
+    padding: 10px;
+    border-radius: 8px;
+    margin-right: 20px; /* Adjust the margin as needed */
+ }
+ 
+ 
+ /* Additional styling for the tweet box */
+ #tweet-box textarea {
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+    font-size: 14px;
+    padding-left: 5px;
+ }
+ 
+ 
+ #tweet-box button {
+    background-color: #084F35;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+ }
+ 
+ 
+ #tweet-box button:hover {
+   background-color: pink;
+ }
+ .header {
+    overflow: hidden;
+    background-color: #084F35;
+    padding: 20px 10px;
+    text-align: center;
+  }
+  
+  .header a {
+    float: left;
+    color: pink;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 5px;
+    border-radius: 4px;
+    font-weight: bold; /* Add this line to make the text bold */
+    display: inline-block;
+    margin: 0 auto;
+  }
+  /* Rank Container Styles */
+ .rank-container {
+    width: 300px;
+    padding: 20px;
+    background-color: #C8E6C9;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 50px;
+    height: auto;            /* Maintain aspect ratio */
+ }
+ 
+ 
+ 

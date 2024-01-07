@@ -51,33 +51,31 @@ nav a {
 }
 
 #tweet-box {
-    background-color: white;
-    border: 1px solid #ddd;
-    padding: 10px;
+    background-color: #C8E6C9;
+    padding: 20px;
     border-radius: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Tweets Container */
 #tweets-container {
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: #C8E6C9;
+    padding: 20px;
     border-radius: 8px;
-    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .tweet {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .tweet strong {
-    color: #00acee;
+    color: pink;
 }
 
 .tweet p {
     margin: 0;
 }
-
 /* Right Column */
 #right-column {
     width: 30%;

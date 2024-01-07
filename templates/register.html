@@ -22,6 +22,9 @@
     <!-- Registration Box -->
     <div class="register-box">
       <h2>Register</h2>
+      {% if error %}
+      <h4 class="text-danger"> {{ error }} </h4>
+      {% endif %}
       <form action="#" method="post">
         <!-- Username Box -->
         <div class="input-box">

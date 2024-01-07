@@ -1,0 +1,106 @@
+/* home.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1E1E1E;
+}
+
+#logo {
+    text-align: center;
+    padding: 10px;
+}
+
+#logo img {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+
+
+/* Main Content and Right Column Container */
+#main-container {
+    display: flex;
+}
+
+/* Content including Tweet Box */
+#content {
+    margin: 10px;
+    width: 70%;
+}
+
+#tweet-box {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Tweets Container */
+#tweets-container {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.tweet {
+    margin-bottom: 10px;
+}
+
+.tweet strong {
+    color: #00acee;
+}
+
+.tweet p {
+    margin: 0;
+}
+
+/* Right Column */
+#right-column {
+    width: 30%;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Additional styling for the tweet box */
+#tweet-box textarea {
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+    font-size: 14px;
+}
+
+#tweet-box button {
+    background-color: #084F35;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #084F35;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+
+.header a {
+  float: left;
+  color: pink;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+  font-weight: bold; /* Add this line to make the text bold */
+  display: inline-block;
+  margin: 0 auto;
+}

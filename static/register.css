@@ -52,6 +52,11 @@ body, html {
   border: 1px solid #ccc;
 }
 
+/* Adjust the margin for the .parent element */
+.parent {
+  margin-top: 10px; /* Adjusted margin-top for spacing */
+}
+
 /* Button Styles */
 button {
   width: 100%;

@@ -51,8 +51,8 @@ nav a {
 }
 
 #tweet-box {
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: #C8E6C9;
+    border: 1px solid #C8E6C9;
     padding: 10px;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -60,8 +60,8 @@ nav a {
 
 /* Tweets Container */
 #tweets-container {
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: #C8E6C9;
+    border: 1px solid #C8E6C9;
     border-radius: 8px;
     padding: 10px;
 }
@@ -81,9 +81,10 @@ nav a {
 /* Right Column */
 #right-column {
     width: 30%;
-    background-color: #f0f0f0;
+    background-color: #C8E6C9;
     padding: 10px;
     border-radius: 8px;
+    margin-right: 20px; /* Adjust the margin as needed */
 }
 
 /* Additional styling for the tweet box */

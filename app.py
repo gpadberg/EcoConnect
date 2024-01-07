@@ -23,8 +23,14 @@ def get_current_user():
 @app.route('/')
 def index():
     user = get_current_user()
-    return render_template("landing.html", user=user)
+    return render_template('landing.html',user=user)
 
+
+def get_total_points_for_user(username):
+    db = getDatabase()
+    cursor = db.execute("SELECT points FROM users WHERE username = ?", [username])
+    users = cursor.fetchone()
+    return users['points'] if users else 0
 
 @app.route('/login', methods = ["POST","GET"])
 def login():
@@ -39,7 +45,7 @@ def login():
         if personfromdatabase:
             if password == personfromdatabase['password']:
                 session['user'] = personfromdatabase['username']
-                return redirect(url_for('index'))
+                return redirect(url_for('home'))
             else:
                 error = "username or password did not match. Try again"
                 return render_template('login.html', error = error)
@@ -64,7 +70,7 @@ def register():
             error = "username already taken, please try again"
             return render_template("register.html", error = error)
         
-        db.execute("insert into users (name, password, teacher, admin) values (?,?,?,?)",[name, password, '0', '0'])
+        db.execute("insert into users (username, password, points) values (?,?,?)",[name, password, 0])
         db.commit()
         session['user'] = name
         return redirect(url_for('index'))
@@ -74,6 +80,22 @@ def register():
 def selectATask():
     return render_template("selectATask.html")
 
+def update_points(username, points):
+    db = getDatabase()
+    db.execute("UPDATE users SET points = ? WHERE username = ?", [points, username])
+    db.commit()
+
+@app.route('/claim_task/<int:task_points>', methods=['POST'])
+def claim_task(task_points):
+    user = get_current_user()
+
+    if user:
+        current_points = get_total_points_for_user(user['username'])
+        new_points = current_points + task_points
+
+        update_points(user['username'], new_points)
+
+    return redirect(url_for('selectATask'))
 
 @app.route('/logout')
 def logout():
@@ -82,7 +104,9 @@ def logout():
 
 @app.route('/homepage')
 def home():
-    return render_template("home.html")
+    user = get_current_user()
+    total_points = get_total_points_for_user(user['username']) if user else 0
+    return render_template("home.html", user=user, total_points=total_points)
 
 if __name__ == "__main__":
     app.run(debug = True)

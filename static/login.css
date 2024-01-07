@@ -40,7 +40,7 @@ body, html {
 
 
 /* Form and Button Styles (For the Login Box) */
-.login-box form input[type="email"],
+.login-box form input[type="text"],
 .login-box form input[type="password"] {
     width: 80%; /* Adjusted width for input fields */
     margin: 10px auto; /* Centered and spaced the input fields */

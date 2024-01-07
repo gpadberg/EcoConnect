@@ -1,9 +1,16 @@
 body {
+    color: white;
     font-family: Arial, sans-serif;
     margin: 20px;
+    
+}
+
+body, html {
+  background-color: #1E1E1E;
 }
 
 .task-container {
+    background-color: #B8D8BE;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,6 +22,8 @@ body {
 
 .task-name {
     flex: 1;
+  
+    color: #084F35;
 }
 
 .claim-button {
@@ -27,23 +36,27 @@ body {
 }
 
 .claim-button:hover {
-    background-color: #45a049;
+    background-color: pink;
 }
 
 .header {
   overflow: hidden;
-  background-color: #C8E6C9;
+  background-color: #084F35;
   padding: 20px 10px;
+  text-align: center;
 }
 
 
 .header a {
   float: left;
-  color: #084F35;
+  color: pink;
   text-align: center;
   padding: 12px;
   text-decoration: none;
   font-size: 18px; 
   line-height: 25px;
   border-radius: 4px;
+  font-weight: bold; /* Add this line to make the text bold */
+  display: inline-block;
+  margin: 0 auto;
 }

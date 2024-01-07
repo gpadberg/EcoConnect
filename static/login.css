@@ -27,6 +27,11 @@ body, html {
     height: 100vh;
 }
 
+/* Adjust the margin for the .parent element */
+.parent {
+    margin-top: 10px; /* Adjusted margin-top for spacing */
+}
+
 /* Individual Box Styles */
 .login-box, .welcome-box {
     width: 380px;           /* Set the width to 380px for both boxes */

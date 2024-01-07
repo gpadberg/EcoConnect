@@ -1,8 +1,7 @@
-
 from flask import Flask, render_template, url_for, request, g, redirect, session
 from database import connect_to_database, getDatabase
-from werkzeug.security import generate_password_hash, check_password_hash
 import os
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.urandom(24)
 
@@ -34,41 +33,36 @@ def get_total_points_for_user(username):
 
 @app.route('/login', methods = ["POST","GET"])
 def login():
-    user  = get_current_user()
+    user = get_current_user()
     error = None
+    
     if request.method == "POST":
         name = request.form['username']
         password = request.form['password']
         db = getDatabase()
-        fetchedperson_cursor=db.execute("select * from users where username = ?",[name])
+        fetchedperson_cursor = db.execute("select * from users where username = ?", [name])
         personfromdatabase = fetchedperson_cursor.fetchone()
+        
         if personfromdatabase:
             if password == personfromdatabase['password']:
                 session['user'] = personfromdatabase['username']
                 return redirect(url_for('home'))
             else:
-                error = "username or password did not match. Try again"
-                return render_template('login.html', error = error)
+                error = "Username or password did not match. Try again."
         else:
-            error = "username or password did not match, try again"
-            return redirect(url_for('login'))
-        
-    return render_template("login.html", user=user)
+            error = "Username or password did not match. Try again."
 
-@app.route('/register', methods = ["POST", "GET"])
+    return render_template("login.html", user=user, error=error)
+
+@app.route('/register', methods=["POST", "GET"])
 def register():
-    user  = get_current_user()
+    user = get_current_user()
     error = None
+    
     if request.method == "POST":
-        db = getDatabase()
         name = request.form['username']
         password = request.form['password']
-
-        user_fetching_cursor = db.execute("select * from users where username = ?",[name])
-        existing_user = user_fetching_cursor.fetchone()
-        if existing_user:
-            error = "username already taken, please try again"
-            return render_template("register.html", error = error)
+        db = getDatabase()
         
         db.execute("insert into users (username, password, points) values (?,?,?)",[name, password, 0])
         db.commit()
@@ -109,4 +103,4 @@ def home():
     return render_template("home.html", user=user, total_points=total_points)
 
 if __name__ == "__main__":
-    app.run(debug = True)
+    app.run(debug=True)

@@ -1,64 +1,107 @@
+/* SelectATask.css */
 body {
-    color: white;
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    
-}
-
-body, html {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
   background-color: #1E1E1E;
+  color: white; /* Set text color to white */
+}
+/* Logo Styles */
+#logo {
+  display: flex;
+  justify-content: center; /* Horizontally centers the logo */
+  align-items: center;     /* Vertically centers the logo */
+  margin-top: 50px;        /* Adds some top margin for spacing */
 }
 
+#logo img {
+  max-width: 200px;        /* Set a maximum width for the logo */
+  height: auto;            /* Maintain aspect ratio */
+}
+
+.parent {
+  margin-top: 10px; /* Adjusted margin-top for spacing */
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #084F35;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #084F35; /* Add this line with your border color */
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white; /* Replace 'yourTextColor' with the desired color code or name */
+  font-size: 16px;
+}
+
+nav a:hover {
+  color: pink; /* Replace 'yourHoverColor' with the desired hover color code or name */
+}
+
+
+/* Hero Section */
+#hero {
+  background-color: #C8E6C9;
+  border: 1px solid #C8E6C9;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center text */
+  width: 80%; /* Set a fixed width, adjust as needed */
+  margin: 0 auto; /* Center the hero box horizontally */
+}
+
+#hero h1 {
+  color: #1e1e1e;
+}
+
+#hero p {
+  color: #1e1e1e;
+}
+
+/* Task Containers */
 .task-container {
-    background-color: #B8D8BE;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 300px;
-    margin: 20px auto;
-    border: 1px solid #ccc;
-    padding: 10px;
+  background-color: #C8E6C9;
+  border: 1px solid #C8E6C9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto; /* Center the task container horizontally */
+  padding: 10px;
+  width: 80%; /* Set a fixed width, adjust as needed */
+  display: flex; /* Use flexbox */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Add space between items */
 }
 
 .task-name {
-    flex: 1;
-  
-    color: #084F35;
+  font-size: 18px;
+  margin-bottom: 0; /* Remove margin to align text with the button */
 }
 
 .claim-button {
-    padding: 8px 12px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  background-color: #084F35;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
 }
 
 .claim-button:hover {
-    background-color: pink;
+  background-color: pink;
 }
-
-.header {
-  overflow: hidden;
-  background-color: #084F35;
-  padding: 20px 10px;
-  text-align: center;
-}
-
-
-.header a {
-  float: left;
-  color: pink;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px; 
-  line-height: 25px;
-  border-radius: 4px;
-  font-weight: bold; /* Add this line to make the text bold */
-  display: inline-block;
-  margin: 0 auto;
-}
-
-  

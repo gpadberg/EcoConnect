@@ -27,6 +27,11 @@ body, html {
     height: 100vh;
 }
 
+/* Adjust the margin for the .parent element */
+.parent {
+    margin-top: 10px; /* Adjusted margin-top for spacing */
+}
+
 /* Individual Box Styles */
 .login-box, .welcome-box {
     width: 380px;           /* Set the width to 380px for both boxes */
@@ -40,7 +45,7 @@ body, html {
 
 
 /* Form and Button Styles (For the Login Box) */
-.login-box form input[type="email"],
+.login-box form input[type="text"],
 .login-box form input[type="password"] {
     width: 80%; /* Adjusted width for input fields */
     margin: 10px auto; /* Centered and spaced the input fields */

@@ -6,14 +6,22 @@ body {
     background-color: #1E1E1E;
 }
 
+/* Logo Styles */
 #logo {
-    text-align: center;
-    padding: 10px;
+    display: flex;
+    justify-content: center; /* Horizontally centers the logo */
+    align-items: center;     /* Vertically centers the logo */
+    margin-top: 50px;        /* Adds some top margin for spacing */
 }
 
 #logo img {
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 200px;        /* Set a maximum width for the logo */
+    height: auto;            /* Maintain aspect ratio */
+}
+
+/* Adjust the margin for the .parent element */
+.parent {
+    margin-top: 10px; /* Adjusted margin-top for spacing */
 }
 
 nav {
@@ -51,39 +59,39 @@ nav a {
 }
 
 #tweet-box {
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: #C8E6C9;
+    border: 1px solid #C8E6C9;
     padding: 10px;
     border-radius: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Tweets Container */
 #tweets-container {
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: #C8E6C9;
+    border: 1px solid #C8E6C9;
     border-radius: 8px;
-    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .tweet {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .tweet strong {
-    color: #00acee;
+    color: #1e1e1e;
 }
 
 .tweet p {
     margin: 0;
 }
-
 /* Right Column */
 #right-column {
     width: 30%;
-    background-color: #f0f0f0;
+    background-color: #C8E6C9;
     padding: 10px;
     border-radius: 8px;
+    margin-right: 20px; /* Adjust the margin as needed */
 }
 
 /* Additional styling for the tweet box */
@@ -102,4 +110,8 @@ nav a {
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
+}
+
+#tweet-box button:hover {
+   background-color: pink;
 }

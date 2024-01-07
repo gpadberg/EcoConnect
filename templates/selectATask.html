@@ -6,88 +6,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Claim a Task</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-
-  
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
   </head>
   <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <div class="header">
-      
-  <a href="#default" class="logo">CompanyLogo</a>
-  <div class="parent">
-    <div class="header">
-        {{ show_links() }}
+      <a href="{{ url_for('index') }}" class="logo">CompanyLogo</a>
+      <div class="parent">
+        <div class="header">
+            {{ show_links() }}
+        </div>
+      </div>
+      <div class="header-right">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a class="active" href="{{ url_for('select_task') }}">Claim a Task</a>
+      </div>
     </div>
-  </div>
-    
-    
-  
-  <div class="header-right">
-    <a href="#home">Home</a>
-    <a class="active" href="#claim">Claim a Task</a>
 
-  </div>
+    <h1>Claim a Task</h1>
+  <div class="task-container">
+     <div class="task-name">Picked up garbage - 2 points</div>
+     <button class="claim-button">Claim</button>
+ </div>
+ 
+ <div class="task-container">
+     <div class="task-name">Said no to single-use plastic - 3 points</div>
+     <button class="claim-button">Claim</button>
+ </div>
+
+ <div class="task-container">
+     <div class="task-name">Took public transportation - 3 points</div>
+     <button class="claim-button">Claim</button>
+ </div>
+ 
+  <div class="task-container">
+     <div class="task-name">Reduced energy use - 2 points</div>
+     <button class="claim-button">Claim</button>
+ </div>
+ 
+  <div class="task-container">
+     <div class="task-name">Bought used goods - 5 points</div>
+     <button class="claim-button">Claim</button>
+ </div>
+ 
+  <div class="task-container">
+     <div class="task-name">Reuse and recycle - 1 point </div>
+     <button class="claim-button">Claim</button>
+ </div>
+ 
+  <div class="task-container">
+     <div class="task-name">Say no to plastic bags - 4 points</div>
+     <button class="claim-button">Claim</button>
+ </div>
+ 
+  <div class="task-container">
+     <div class="task-name">Ate locally grown vegetables - 3 points</div>
+     <button class="claim-button">Claim</button>
+ </div>
+ 
+  <div class="task-container">
+     <div class="task-name">Buying in bulk - 5 points</div>
+     <button class="claim-button">Claim</button>
+ </div>
+ 
+  <div class="task-container">
+     <div class="task-name">Used a reusable water bottle - 1 point</div>
+     <button class="claim-button">Claim</button>
+ </div>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Dynamic Task Rendering -->
+{% for task in tasks %}
+<div class="task-container">
+  <div class="task-name">{{ task.content }} - {{ task.points }} points</div>
+  <form action="{{ url_for('claim_task', task_id=task.id) }}" method="post">
+    <button type="submit" class="claim-button">Claim</button>
+  </form>
 </div>
-
-<h1>Claim a Task</h1>
-
-
-    
-    
-
-       <div class="task-container">
-        <div class="task-name">Picked up garbage - 2 points</div>
-        <button class="claim-button">Claim</button>
-    </div>
-    
-    <div class="task-container">
-        <div class="task-name">Said no to single-use plastic - 3 points</div>
-        <button class="claim-button">Claim</button>
-    </div>
-
-    <div class="task-container">
-        <div class="task-name">Took public transportation - 3 points</div>
-        <button class="claim-button">Claim</button>
-    </div>
-    
-     <div class="task-container">
-        <div class="task-name">Reduced energy use - 2 points</div>
-        <button class="claim-button">Claim</button>
-    </div>
-    
-     <div class="task-container">
-        <div class="task-name">Bought used goods - 5 points</div>
-        <button class="claim-button">Claim</button>
-    </div>
-    
-     <div class="task-container">
-        <div class="task-name">Reuse and recycle - 1 point </div>
-        <button class="claim-button">Claim</button>
-    </div>
-    
-     <div class="task-container">
-        <div class="task-name">Say no to plastic bags - 4 points</div>
-        <button class="claim-button">Claim</button>
-    </div>
-    
-     <div class="task-container">
-        <div class="task-name">Ate locally grown vegetables - 3 points</div>
-        <button class="claim-button">Claim</button>
-    </div>
-    
-     <div class="task-container">
-        <div class="task-name">Buying in bulk - 5 points</div>
-        <button class="claim-button">Claim</button>
-    </div>
-    
-     <div class="task-container">
-        <div class="task-name">Used a reusable water bottle - 1 point</div>
-        <button class="claim-button">Claim</button>
-    </div>
-
+{% endfor %}
   </body>
 </html>
-
-
-

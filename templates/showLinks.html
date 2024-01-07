@@ -1,21 +1,25 @@
-
 {% macro show_links() %}
 <ul class="nav justify-content-center">
     <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">Homepage</a>
+      <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Homepage</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{{url_for('login')}}">Login</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{{url_for('register')}}">Register</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{{url_for('selectATask')}}">Select a Task</a>
-      </li>
-    <li class="nav-item">
-      <a class="nav-link">Logout</a>
-    </li>
-  </ul>
 
-  {% endmacro %}
+    {% if 'user_id' not in session %}
+        <!-- Show these links only if the user is not logged in -->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+        </li>
+    {% else %}
+        <!-- Show these links only if the user is logged in -->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('select_task') }}">Select a Task</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+        </li>
+    {% endif %}
+</ul>
+{% endmacro %}

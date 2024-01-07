@@ -21,8 +21,11 @@
     <!-- Login Box -->
     <div class="login-box">
       <h2>Login</h2>
+      {% if error %}
+      <h4 class="text-danger" style="font-size: smaller;" > {{ error }} </h4>
+      {% endif %}
       <form action="#" method="post">
-        <input type="email" name="username" placeholder="Username" required>
+        <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
         <button type="submit">Login</button>
       </form>

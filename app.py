@@ -22,33 +22,53 @@ def get_current_user():
 
 @app.route('/')
 def index():
-    return render_template("home.html")
+    user = get_current_user()
+    return render_template("landing.html", user=user)
 
 
-@app.route('/login')
+@app.route('/login', methods = ["POST","GET"])
 def login():
-    return render_template("login.html")
+    user  = get_current_user()
+    error = None
+    if request.method == "POST":
+        name = request.form['username']
+        password = request.form['password']
+        db = getDatabase()
+        fetchedperson_cursor=db.execute("select * from users where username = ?",[name])
+        personfromdatabase = fetchedperson_cursor.fetchone()
+        if personfromdatabase:
+            if password == personfromdatabase['password']:
+                session['user'] = personfromdatabase['username']
+                return redirect(url_for('index'))
+            else:
+                error = "username or password did not match. Try again"
+                return render_template('login.html', error = error)
+        else:
+            error = "username or password did not match, try again"
+            return redirect(url_for('login'))
+        
+    return render_template("login.html", user=user)
 
 @app.route('/register', methods = ["POST", "GET"])
 def register():
+    user  = get_current_user()
+    error = None
     if request.method == "POST":
         db = getDatabase()
         name = request.form['username']
         password = request.form['password']
 
-        user_fetching_cursor = db.execute("select * from users where username = ?")
+        user_fetching_cursor = db.execute("select * from users where username = ?",[name])
         existing_user = user_fetching_cursor.fetchone()
-
         if existing_user:
             error = "username already taken, please try again"
-            return render_template("register.html", error=error)
+            return render_template("register.html", error = error)
         
-        db.execute("insert into users (username, password, points) values (?,?,?)",[name, password, 0])
+        db.execute("insert into users (name, password, teacher, admin) values (?,?,?,?)",[name, password, '0', '0'])
         db.commit()
-        session['name'] = name
-
+        session['user'] = name
         return redirect(url_for('index'))
-    return render_template("register.html")
+    return render_template("register.html", user=user)
 
 @app.route('/selectATask')
 def selectATask():
@@ -57,6 +77,11 @@ def selectATask():
 
 @app.route('/logout')
 def logout():
+    session.pop('user', None)
+    return redirect(url_for('index'))
+
+@app.route('/homepage')
+def home():
     return render_template("home.html")
 
 if __name__ == "__main__":

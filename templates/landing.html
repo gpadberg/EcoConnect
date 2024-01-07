@@ -1,0 +1,43 @@
+{% from "showlinks.html" import show_links %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoConnect - Sustainability Facts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <div class="parent">
+        <div class="header">
+            {{ show_links(user) }}
+        </div>
+    </div>
+
+    <main>
+        <section id="hero">
+            <!-- Add a hero image or content here -->
+            <h1>Welcome to EcoConnect</h1>
+            <p>Your platform for sustainable living</p>
+        </section>
+
+        <section id="fun-facts">
+            <h2>Fun Facts About Sustainability</h2>
+            <ul>
+                <li>Did you know that recycling one aluminum can saves enough energy to power a TV for three hours?</li>
+                <li>The average American uses about 500 plastic bags each year. Consider using reusable bags to reduce waste!</li>
+                <li>Turning off the tap while brushing your teeth can save up to 200 gallons of water per month.</li>
+                <!-- Add more fun facts as needed -->
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Add footer content, copyright information, etc. -->
+        <p>&copy; 2024 EcoConnect. All rights reserved.</p>
+    </footer>
+</body>
+</html>

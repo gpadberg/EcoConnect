@@ -70,7 +70,7 @@ nav a {
 }
 
 .tweet strong {
-    color: pink;
+    color: #1e1e1e;
 }
 
 .tweet p {
@@ -100,4 +100,8 @@ nav a {
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
+}
+
+#tweet-box button:hover {
+   background-color: pink;
 }

@@ -1,18 +1,64 @@
-.header {
-    overflow: hidden;
-    background-color: #C8E6C9;
-    padding: 20px 10px;
-  }
+body {
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    
+}
+
+body, html {
+  background-color: #1E1E1E;
+}
+
+.task-container {
+    background-color: #B8D8BE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.task-name {
+    flex: 1;
   
-  
-  .header a {
-    float: left;
     color: #084F35;
-    text-align: center;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px; 
-    line-height: 25px;
+}
+
+.claim-button {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
     border-radius: 4px;
-  }
+    cursor: pointer;
+}
+
+.claim-button:hover {
+    background-color: pink;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #084F35;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+
+.header a {
+  float: left;
+  color: pink;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+  font-weight: bold; /* Add this line to make the text bold */
+  display: inline-block;
+  margin: 0 auto;
+}
+
   
